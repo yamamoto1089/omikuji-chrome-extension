@@ -1,0 +1,180 @@
+body {
+    width: 300px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    background: #f5f5f0;
+    color: #333;
+    overflow: hidden;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    font-weight: normal;
+    color: #8b4513;
+    letter-spacing: 2px;
+}
+
+.omikuji-box {
+    background: #ffffff;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.omikuji-box::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, #d4af37, #f4e4bc, #d4af37);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.result {
+    margin-bottom: 20px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.result.hidden {
+    opacity: 0;
+    display: none;
+}
+
+.fortune-level {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #8b4513;
+}
+
+.fortune-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.draw-button {
+    background: #8b4513;
+    border: 1px solid #654321;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.draw-button:hover:not(:disabled) {
+    background: #a0522d;
+    transform: translateY(-1px);
+}
+
+.draw-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.footer {
+    font-size: 11px;
+    color: #888;
+    margin-top: auto;
+}
+
+.loading {
+    margin-bottom: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.loading.hidden {
+    opacity: 0;
+    display: none;
+}
+
+.omikuji-animation {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.paper-slip {
+    width: 4px;
+    height: 30px;
+    background: #d4af37;
+    border-radius: 2px;
+    animation: shake 0.8s ease-in-out infinite;
+}
+
+.paper-slip:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.paper-slip:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.paper-slip:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translateY(-8px) rotate(2deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-4px) rotate(-1deg);
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateY(-6px) rotate(1deg);
+        opacity: 1;
+    }
+}
+
+.loading-text {
+    font-size: 13px;
+    color: #8b4513;
+    animation: fade 1.5s ease-in-out infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
