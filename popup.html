@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>おみくじ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎋 おみくじ 🎋</h1>
+      <div class="omikuji-box">
+        <div id="loading" class="loading hidden">
+          <div class="omikuji-animation">
+            <div class="paper-slip"></div>
+            <div class="paper-slip"></div>
+            <div class="paper-slip"></div>
+          </div>
+          <div class="loading-text">おみくじを引いています...</div>
+        </div>
+        <div id="result" class="result hidden">
+          <div class="fortune-level"></div>
+          <div class="fortune-text"></div>
+        </div>
+        <button id="drawButton" class="draw-button">おみくじを引く</button>
+      </div>
+      <div class="footer">今日の運勢は？</div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
