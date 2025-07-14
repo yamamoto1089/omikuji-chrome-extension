@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "おみくじ",
+  "version": "1.0",
+  "description": "毎日の運勢をおみくじで占います",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "おみくじを引く"
+  },
+  "icons": {
+    "16": "icon.svg",
+    "32": "icon.svg",
+    "48": "icon.svg",
+    "128": "icon.svg"
+  },
+  "permissions": []
+}
